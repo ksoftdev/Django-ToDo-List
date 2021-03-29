@@ -18,7 +18,7 @@
 
         }
 
-	h1,
+	    h1,
         h2,
         h3,
         h4,
@@ -111,6 +111,36 @@
             text-shadow: 1px 1px #81413b;
 
         }
+    
+        /*Handle Classes*/
+        .handle {
+            display: inline-block;
+            padding: 20px 16px;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .handle:after,
+        .handle:before {
+            display: block;
+            content: "";
+        }
+
+        .handle:active,
+        .handle:active:before,
+        .handle:active:after {
+            cursor: grabbing;
+        }
+
+        .dropArea {
+            background-color: #f1f2f6;
+            color: black;
+            border: #ced6e0 1px solid;
+        }
+
+        .selectedTask {
+            opacity: 0.6;
+        }
 
         input[type=text],
         input[type=password],
@@ -144,9 +174,7 @@
 </head>
 <body>
 	<div class="container">
-		{% block content %}
-
-		{% endblock content %}
+		{% block content %}{% endblock content %}
 	</div>
 </body>
 </html> 
